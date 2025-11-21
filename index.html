@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food Collection Page</title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Screenshot 2025-08-02 123534.png" type="image/x-icon">
+    
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    
+    <!-- Tailwind Css -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Google Font Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+        }
+        /* Countdown animation */
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Button hover animation */
+        .btn-animate {
+            transition: all 0.3s ease-in-out;
+        }
+
+    </style>
+
+</head>
+
+<body id="homeSect" class="min-h-screen flex flex-col bg-gray-100">
+    
+    <!-- ================= Navbar Section ================= -->
+
+    <nav class="navbar fixed top-0 left-0 w-full z-10 font-[Montserrat]">
+
+        <!-- Top Nav -->
+        <div class="mainNavDiv bg-[#556155] flex flex-row justify-between px-8 gap-10 py-3.5 sm:justify-between md:justify-end lg:justify-end xl:justify-end 2xl:justify-end">
+
+            <ul class="flex space-x-1.5 text-[9px] sm:text-[13px] sm:space-x-5 md:text-[12px] lg:text-[14px] xl:text-[15px] 2xl:text-[15px]">
+                <li class="homeBtn text-gray-200 hover:underline hover:cursor-pointer">Home</li>
+                <li class="collectionBtn text-gray-200 hover:underline hover:cursor-pointer">Collection</li>
+                <li class="citiesBtn text-gray-200 hover:underline hover:cursor-pointer">Cities</li>
+                <li class="reviewsBtn text-gray-200 hover:underline hover:cursor-pointer">Reviews</li>
+                <li class="aboutBtn text-gray-200 hover:underline hover:cursor-pointer">About</li>
+            </ul>
+            <div class="flex flex-row items-center text-[9px] sm:text-[12px] md:text-[11px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] font-[Montserrat]  hover:cursor-pointer">
+                <i class="fa-regular fa-circle-user text-gray-300 pr-4 sm:pr-5 md:pr-6 lg:pr-6 xl:pr-6 2xl:pr-6"></i>
+                <a href="#" class="text-gray-200 hover:underline pr-2 border-r-1">LOGIN</a>
+                <a href="#" class="text-gray-200 hover:underline pl-2">REGISTER</a>
+            </div>
+
+        </div>
+
+        <!-- Search Nav -->
+        <div class="navSearchDiv flex flex-row justify-evenly py-5 bg-gray-100">
+
+            <div class="mainLogoDiv flex items-center transition-transform duration-500 hover:cursor-pointer hover:scale-105">
+                <a href="index.html"><i class="navLogo fa-solid fa-utensils text-[26px]" style="color: #556155;"></i></a>
+                <p class="navLogoTxt pl-2 font-semibold tracking-tight text-[22px]">FOOD</p>
+            </div>
+            <div class="text-center navInp">
+                <input id="searchBox" type="search" placeholder="Search products..." 
+                class="shadow-md rounded-3xl w-[650px] p-[10px] pl-5 font-sans bg-[#e7e7e7] outline-gray-400">
+            </div>
+            <div class="flex flex-row items-center justify-end hover:cursor-pointer">
+                <i class="navCartIcon fa-solid fa-cart-shopping text-[25px]" style="color: #556155;"></i>
+            </div>
+
+        </div>
+        
+    </nav>
+
+    <!-- ================= Middele Section ================= -->
+
+    <section class="mx-5 sm:mx-12 md:mx-16 lg:mx-23 xl:mx-32 2xl:mx-36 mt-50 mb-35">
+
+        <!-- ================= Hero Section ================= -->
+        <section class="fade-in w-auto h-40 sm:h-70 md:h-70 lg:h-85 xl:h-110 bg-[url('/Images/banner.png')] bg-cover bg-no-repeat bg-center rounded-xl mx-auto shadow-lg"></section>
+
+        <hr id="collectionPageSect" class="my-20 text-gray-300">
+
+        <!-- ================= Top Chips Bar ================= -->
+
+        <div class="fade-in TopFiltDiv w-auto -mx-5 sm:-mx-10 md:-mx-15 lg:-mx-20 xl:-mx-32 grid grid-cols-12 text-gray-200 bg-[#556155] 
+            px-6 py-4.5 shadow-[0_4px_16px_rgba(0,0,0,0.06)]">
+
+            <!-- Left Chips Area -->
+            <div class="filtChipsDiv col-span-9 flex items-center font-[Montserrat]">
+
+                <div class="flex flex-row items-center text-[17px] space-x-2 pr-2">
+                    <i class="fa-solid fa-bars text-[18px]"></i>
+                    <p class="font-semibold tracking-tight">Filters Applied →</p>
+                </div>
+
+                <!-- Chips sections -->
+                <div class="flex" id="allCategFiltLine"></div>
+                <div class="flex" id="allRatFiltLine"></div>
+                <div class="flex" id="allRangFiltLine"></div>
+
+                <!-- Clear All -->
+                <div id="clearAllBtnDiv" class="ml-1"></div>
+
+            </div>
+
+            <!-- Right Dropdowns -->
+            <div class="dropdownsDiv col-span-3 flex justify-end items-center gap-4">
+
+                <!-- Items Per Page -->
+                <div class="pgStDrpdwnDiv flex items-center gap-2 font-[Montserrat]">
+
+                    <p class="font-semibold text-[14px] uppercase">Items</p>
+                    <select id="itmPrPgDropdown" class="border-2 border-gray-300 bg-[#556155] rounded-xl px-3 h-10 min-w-20 text-center font-medium hover:cursor-pointer transition-all duration-200 focus:ring-2 focus:ring-white">
+                        <option value="15">15</option>
+                        <option value="12">12</option>
+                        <option value="9">9</option>
+                        <option value="6">6</option>
+                        <option value="3">3</option>
+                    </select>
+
+                </div>
+
+                <!-- Sorting Dropdown -->
+                <div class="sortDrpdwnDiv flex items-center">
+
+                    <select id="sortDropdown" class="border-2 border-gray-300 bg-[#556155] rounded-xl px-4 h-10 w-48 text-center font-medium hover:cursor-pointer transition-all duration-200 focus:ring-2 focus:ring-white">
+                        <option disabled selected>Sort Options</option>
+                        <option value="ratLowToHigh">Rating Low → High</option>
+                        <option value="ratHighToLow">Rating High → Low</option>
+                        <option value="pricLowToHigh">Price Low → High</option>
+                        <option value="pricHighToLow">Price High → Low</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= Collection Section ================= -->
+    
+        <div class="fade-in mainAllSecDiv -mx-32 grid grid-cols-12 gap-3 mt-10">
+    
+            <!-- Left Section -->
+            <div class="leftSecMainDiv sticky top-38 col-span-2 border h-144 py-2 rounded-xl border-gray-200 bg-gray-50 font-[Montserrat]">
+
+                <div class="text-black px-4 py-2 border-b border-gray-300" id="categCards">
+                    <h3 class="text-gray-600 text-[17px] font-bold py-2">Cuisines</h3>
+                </div>
+    
+                <div class="pricRangCardsDiv text-black px-4 py-5 border-b border-gray-300">
+
+                    <h3 class="font-semibold mb-2">Pricing Filter</h3>
+
+                    <!-- Modern Slider -->
+                    <div class="pt-2 rangSlidDiv">
+                        <input type="range" id="priceSlider" class="w-full appearance-none h-2 rounded-full bg-gray-200 accent-[#556155] cursor-pointer sliderStyled">
+                    </div>
+
+                    <div class="flex justify-between text-[15px] rangSlidTxtDiv mt-2">
+                        <p id="minValue" class="font-medium">--</p>
+                        <p id="maxValue" class="font-medium">--</p>
+                    </div>
+
+                </div>
+
+    
+                <div class="ratCardsDiv text-black px-4 py-4">
+    
+                    <h3 class="text-[17px] font-semibold mb-1">Rating Filter</h3>
+                    <div class="flex flex-col" id="ratingCards"></div>
+    
+                </div>
+    
+            </div>
+    
+            <!-- Right Section -->
+            <div class="righSecMainDiv col-span-10 mb-2">
+    
+                <!-- Cards -->
+                <div class="grid grid-cols-12 gap-4 mx-8" id="prodCards"></div>
+    
+                <!-- Pagination Buttons -->
+                <div class="flex justify-center my-8">
+                    <div class="paginMainDiv text-gray-500 gap-5 border border-gray-300 rounded-md px-3 flex flex-row justify-center items-center">
+                        <div id="pagination" class="flex justify-center"></div>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+
+        <hr id="cityCardSect" class="my-20 text-gray-300">
+
+        <!-- =================== Cities Cards ==================== -->
+    
+        <section class="max-w-[1260px]">
+            <h2 class="fade-in text-2xl font-bold mb-6 text-gray-800">Available Cities</h2>
+    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 ">
+    
+                <!-- City 1: Karachi -->
+                <div class="fade-in bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl border border-white/40 hover:scale-[1.02] transition-all duration-400 cursor-pointer overflow-hidden">
+                
+                    <!-- image -->
+                    <img src="Images/karachi.jfif" alt="Karachi skyline" class="w-full h-45 object-cover">
+                    
+                    <!-- body -->
+                    <div class="p-6 pb-9 flex flex-col h-auto justify-between">
+                        
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 rounded-xl bg-pink-100 text-pink-600 text-xl">
+                                <i class="fa-solid fa-city"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold">Karachi</h3>
+                            </div>
+    
+                            <p class="text-gray-700 mt-3">
+                                Pakistan’s largest city — coastal vibes, huge food scene, and fast delivery in Clifton, DHA, Gulshan and more.
+                            </p>
+                        </div>
+    
+                        <div class="mt-12">
+                            <div class="flex items-center justify-between">
+                                <span class="text-green-600 font-semibold">✔ Delivery Available</span>
+                                <span class="text-gray-500 text-sm">30+ restaurants</span>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <!-- City 2: Lahore -->
+                <div class="fade-in bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl border border-white/40 hover:scale-[1.02] transition-all duration-400 cursor-pointer overflow-hidden">
+                    
+                    <!-- image -->
+                    <img src="Images/lahore.jfif" alt="Lahore city view" class="w-full h-45 object-cover">
+                    
+                    <!-- body -->
+                    <div class="p-6 pb-9 flex flex-col justify-between">
+    
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 rounded-xl bg-yellow-100 text-yellow-600 text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold">Lahore</h3>
+                            </div>
+    
+                            <p class="text-gray-700 mt-3">
+                                Cultural capital with amazing street food — fast delivery across Gulberg, Johar, Model Town and surrounding areas.
+                            </p>
+                        </div>
+    
+                        <div class="mt-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-green-600 font-semibold">✔ Delivery Available</span>
+                                <span class="text-gray-500 text-sm">25+ restaurants</span>
+                            </div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+    
+                <!-- City 3: Islamabad -->
+                <div class="fade-in bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl border border-white/40 hover:scale-[1.02] transition-all duration-400 cursor-pointer overflow-hidden">
+                    
+                    <!-- image -->
+                    <img src="Images/islamabad.jpg" alt="Islamabad skyline" class="w-full h-45 object-cover">
+                    
+                    <!-- body -->
+                    <div class="p-6 pb-9 flex flex-col justify-between">
+                        
+                        <div>
+                            <div class="flex items-center gap-3">
+                                <div class="p-3 rounded-xl bg-green-100 text-green-600 text-xl">
+                                <i class="fa-solid fa-shop"></i>
+                                </div>
+                                <h3 class="text-lg font-semibold">Islamabad</h3>
+                            </div>
+    
+                            <p class="text-gray-700 mt-3">
+                                Clean and green capital — delivery active in F-6 to F-8, Blue Area and Bahria sectors. Quick and reliable riders.
+                            </p>
+                        </div>
+    
+                        <div class="mt-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-green-600 font-semibold">✔ Delivery Available</span>
+                                <span class="text-gray-500 text-sm">18+ restaurants</span>
+                            </div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+        
+        <hr class="my-20 text-gray-300">
+
+        <!-- =================== Our Achievements Section ==================== -->
+    
+        <section class="fade-in max-w-[1260px] grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+            
+            <div class="bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl space-y-2 p-10 transition-all ease-in-out duration-400 hover:scale-[1.02] cursor-pointer">
+                <h3 class="text-3xl font-bold text-[#809680]">100+</h3>
+                <p class="text-gray-700">Restaurants Partnered</p>
+            </div>
+            <div class="bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl space-y-2 p-10 transition-all ease-in-out duration-400 hover:scale-[1.02] cursor-pointer">
+                <h3 class="text-3xl font-bold text-[#809680]">50,000+</h3>
+                <p class="text-gray-700">Orders Delivered</p>
+            </div>
+            <div class="bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl space-y-2 p-10 transition-all ease-in-out duration-400 hover:scale-[1.02] cursor-pointer">
+                <h3 class="text-3xl font-bold text-[#809680]">10,000+</h3>
+                <p class="text-gray-700">Happy Customers</p>
+            </div>
+            <div class="bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl space-y-2 p-10 transition-all ease-in-out duration-400 hover:scale-[1.02] cursor-pointer">
+                <h3 class="text-3xl font-bold text-[#809680]">30 mins</h3>
+                <p class="text-gray-700">Avg Delivery Time</p>
+            </div>
+    
+        </section>
+
+        <hr id="reviewsCardSect" class="my-20 text-gray-300">
+    
+        <!-- =================== Review Cards ==================== -->
+      
+        <section class="max-w-[1260px]">
+            <h2 class="fade-in text-2xl font-bold mb-6 text-gray-800">Customer Food Reviews</h2>
+    
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    
+                <!-- Review 1 -->
+                <div class="fade-in flex flex-col h-auto justify-between bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl p-6 border border-white/40 hover:scale-[1.02] transition-all duration-400 cursor-pointer">
+                    
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 rounded-xl bg-pink-100 text-pink-600 text-xl">
+                            <i class="fa-solid fa-burger"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Taste & Quality</h3>
+                    </div>
+    
+                    <p class="text-gray-700 mt-3">
+                        Food was fresh, perfectly seasoned, and served warm.  
+                        A great experience for anyone craving delicious meals.
+                    </p>
+    
+                    <div class="mt-6 flex text-yellow-500 tracking-widest text-lg">
+                        ★★★★☆
+                    </div>
+    
+                    <p class="text-gray-500 text-sm mt-1">4.0/5 — Based on 2,340 reviews</p>
+    
+                </div>
+    
+                <!-- Review 2 -->
+                <div class="fade-in flex flex-col h-auto justify-between bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl p-6 border border-white/40 hover:scale-[1.02] transition-all duration-400 cursor-pointer">
+                    
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 rounded-xl bg-yellow-100 text-yellow-600 text-xl">
+                            <i class="fa-solid fa-motorcycle"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Delivery Speed</h3>
+                    </div>
+    
+                    <p class="text-gray-700 mt-3">
+                        Food arrived hot and earlier than expected.  
+                        Fast riders make the service super reliable.
+                    </p>
+    
+                    <div class="mt-6 flex text-yellow-500 tracking-widest text-lg">
+                        ★★★★★
+                    </div>
+    
+                    <p class="text-gray-500 text-sm mt-1">5.0/5 — Based on 1,980 reviews</p>
+    
+                </div>
+    
+                <!-- Review 3 -->
+                <div class="fade-in flex flex-col h-auto justify-between bg-white/70 backdrop-blur-lg shadow-xl rounded-2xl p-6 border border-white/40 hover:scale-[1.02] transition-all duration-400 cursor-pointer">
+                    
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 rounded-xl bg-green-100 text-green-600 text-xl">
+                            <i class="fa-solid fa-utensils"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold">Food Packaging</h3>
+                    </div>
+    
+                    <p class="text-gray-700 mt-3">
+                        Packaging was clean, secure, and eco-friendly.  
+                        Meals stayed intact and looked restaurant-fresh.
+                    </p>
+    
+                    <div class="mt-6 flex text-yellow-500 tracking-widest text-lg">
+                        ★★★★★
+                    </div>
+    
+                    <p class="text-gray-500 text-sm mt-1">5.0/5 — Based on 1,530 reviews</p>
+    
+                </div>
+    
+            </div>
+        </section>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="aboutSect" class="mt-auto text-gray-300 pt-12 pb-7 bg-[#556155]">
+
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+
+            <!-- logo and Headline -->
+            <div class="space-y-2">
+                <div class="flex items-center space-x-2">
+                    <i class="navLogo fa-solid fa-utensils text-[22px]"></i>
+                    <h3 class="text-xl font-bold tracking-wide">FastFood</h3>
+                </div>
+                <div>
+                    <p>Fastest food delivery service in your city.</p>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-3">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li class="homeBtn hover:underline hover:cursor-pointer">Home</li>
+                    <li class="collectionBtn hover:underline hover:cursor-pointer">Collection</li>
+                    <li class="citiesBtn hover:underline hover:cursor-pointer">Cities</li>
+                    <li class="reviewsBtn hover:underline hover:cursor-pointer">Reviews</li>
+                    <li class="aboutBtn hover:underline hover:cursor-pointer">About</li>
+                </ul>
+            </div>
+
+            <!-- Contact Links -->
+            <div class="space-y-2">
+                <h3 class="text-xl font-bold mb-3">Contact</h3>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-regular fa-envelope text-[17px]"></i>
+                    <p class="font-semibold tracking-wide">support@FastFood.com</p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fa-solid fa-phone text-[16px]"></i>
+                    <p class="font-semibold tracking-wide">+92 300-222-333-4</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto flex items-center justify-between mt-10 px-4">
+
+            <!-- Left Side Copy -->
+            <p class="text-gray-300">© 2025 FastFood — All rights reserved</p>
+
+            <!-- Right Side Social Media -->
+            <div class="flex gap-4 text-xl">
+                <a target="_blank" href="https://www.facebook.com" class="hover:text-white"><i class="fa-brands fa-facebook"></i></a>
+                <a target="_blank" href="https://www.instagram.com" class="hover:text-white"><i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank" href="https://x.com" class="hover:text-white"><i class="fa-brands fa-x-twitter"></i></a>
+                <a target="_blank" href="https://www.youtube.com" class="hover:text-white"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+        </div>
+        
+    </footer>
+
+</body>
+
+<script src="app.js"></script>
+</html>

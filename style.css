@@ -1,0 +1,381 @@
+.montserrat-uniquifier{
+    font-family: "Montserrat";
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.navbar{
+    box-shadow: 0px 0px 20px rgb(187, 187, 187);
+}
+.navInp>::placeholder{
+    font-weight: 500;
+}
+
+/* Track */
+#priceSlider::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #94ab94; /* light pink track */
+    border-radius: 10px;
+}
+
+/* Thumb */
+#priceSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    background: #556155; /* strong pink */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    transition: 0.2s ease;
+}
+
+/* Thumb on active drag */
+#priceSlider:active::-webkit-slider-thumb {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #556155;
+}
+
+/* Mozilla Firefox */
+#priceSlider::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    background: #556155;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#priceSlider::-moz-range-track {
+    height: 6px;
+    background: #98b098;
+    border-radius: 10px;
+}
+
+
+/* Screen Size 1400px */
+@media (max-width: 1660px) {}
+
+/* Screen Size 1200px */
+@media (max-width: 1399px) {}
+
+/* Screen Size 992px */
+@media (max-width: 1199px) {}
+
+/* Screen Size 768px */
+@media (max-width: 991px) {}
+
+/* Screen Size 576px */
+@media (max-width: 767px) {}
+
+/* Screen Size All mobile check */
+@media (max-width: 575px) {
+
+    /* Navbar Top Line */
+    .mainNavDiv{
+        padding: 5px 0px;
+        gap: 10px;
+        justify-content: center;
+    }
+    .navTopLineIcons , .navTopLineTxt{
+        padding: 0px;
+        font-size: 8px;
+    }
+    .navTxtLog{
+        padding: 0px;
+        padding-right: 4px;
+        font-size: 8px;
+    }
+    .navTxtReg{
+        padding: 0px;
+        padding-left: 4px;
+        font-size: 8px;
+    }
+
+    /* Navbar Search Line */
+    .navSearchDiv{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 18px;
+    }
+
+    .navLogo{
+        font-size: 18px;
+    }
+    .navLogoTxt{
+        font-weight: 600;
+    }
+
+    .searchCartDiv{
+        gap: 10px;
+        margin-top: 5px;
+    }
+    #searchBox{
+        font-size: 14px;
+        width: 260px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+    .navCartIcon{
+        font-size: 20px;
+    }
+
+    /* Section */
+    .mainAllSecDiv{
+        display: flex;
+        flex-direction: column;
+        margin-top: 140px;
+        align-items: center;
+    }
+
+    /* Left Section */
+    .leftSecMainDiv{
+        background-color: #f3f4f6;
+        display: flex;
+        flex-wrap: wrap;
+        position: unset !important;
+        flex-direction: row;
+        padding: 0px;
+        gap: 10px;
+        width: 310px;
+        height: auto;
+        border: none;
+        border-radius: 0px;
+        order: 1;
+    }
+
+    #categCards{
+        flex: 1 1 calc(50% - 10px);
+        min-width: 150px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: white;
+        padding: 5px 15px;
+    }
+    #categCards>h3{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    #categCards>div{
+        gap: 0;
+        height: 28px;
+    }
+    #categCards>div>label{
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .pricRangCardsDiv{
+        align-items: center;
+        flex: 1 1 calc(50% - 10px);
+        min-width: 150px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: white;
+        padding: 25px 16px;
+    }
+    .pricRangCardsDiv>h3{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    /* .rangSlidDiv{
+
+    } */
+    /* .rangSlidTxtDiv>p{
+
+    } */
+    .rangSlidTxtDiv>p{
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    .ratCardsDiv{
+        flex: 0 1 170px;
+        margin: auto;
+        min-width: 150px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: white;
+        padding-top: 12px;
+        padding-bottom: 7px;
+        padding-right: 0px;
+    }
+    .ratCardsDiv>h3{
+        font-size: 15px;
+        font-weight: 600;
+    }
+    /* #ratingCards{
+
+    } */
+    #ratingCards>div{
+        gap: 0px;
+        height: 25px;
+    }
+    #ratingCards>div>i{
+        font-size: 10px;
+        width: 0px;
+    }
+    #ratingCards>div>p{
+        font-size: 12px;
+    }
+
+    /* Right Section */
+    .righSecMainDiv{
+        order: 2;
+    }
+    
+    /* Top Filters Line */
+    .TopFiltDiv{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .filtChipsDiv{
+        grid-column: span 6 / span 6 !important;
+        border-bottom: 1px solid black;
+        margin-bottom: 20px;
+    }
+    .filtChipsDiv>div>p{
+        /* flex-direction: column; */
+        font-size: 10px;
+        font-weight: 600;
+        margin: 9px 0px;
+        margin-left: 4px;
+    }
+    .categChip{
+        border: 1px solid black;
+        margin-left: 5px;
+    }
+    .categChip>p{
+        font-size: 9px;
+    }
+    .categChip>i{
+        font-size: 10px;
+    }
+    .ratChip{
+        border: 1px solid black;
+        margin-left: 5px;
+    }
+    .ratChip>p{
+        font-size: 9px;
+    }
+    .ratChip>i{
+        font-size: 10px;
+    }
+    .rangChip{
+        border: 1px solid black;
+        margin-left: 5px;
+    }
+    .rangChip>p{
+        font-size: 9px;
+    }
+    .rangChip>i{
+        font-size: 10px;
+    }
+    .clearAllChip{
+        border: 1px solid black;
+    }
+    .clearAllChip>p{
+        font-size: 9px;
+    }
+
+    .dropdownsDiv{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    
+    .pgStDrpdwnDiv{
+        margin-bottom: 20px;
+        
+    }
+    .pgStDrpdwnDiv>p{
+        font-size: 11px;
+        font-weight: 600;
+    }
+    #itmPrPgDropdown{
+        font-size: 14px;
+        font-weight: 500;
+        width: 45px;
+        height: 35px;
+        border: 1px solid rgb(191, 186, 186);
+    }
+    
+    .sortDrpdwnDiv{
+        margin: 0px;
+    }
+    #sortDropdown{
+        font-size: 12px;
+        width: 120px;
+        height: 35px;
+        font-weight: 500;
+        border: 1px solid rgb(191, 186, 186);
+    }
+
+    /* Products Card Div */
+    #prodCards{
+        margin-left: 5px;
+        margin-right: 5px;
+        gap: 5px;
+    }
+    .prodCardsDiv{
+        grid-column: span 6 / span 6 !important;
+    }
+    .cardAllTxtDiv{
+        padding: 10px;
+    }
+    .prodMainImg>img{
+        height: 140px;
+    }
+    .prodMainTxt{
+        font-size: 15px;
+    }
+    .prodRat{
+        gap: 3px;
+        height: 22px;
+    }
+    .prodRat>i{
+        font-size: 8px;
+    }
+    .prodRatTxt{
+        font-size: 11px;
+    }
+    .prodDescrp{
+        font-size: 12px;
+        padding-bottom: 2px;
+    }
+    /* .prodPriCartDiv{
+        
+    } */
+    .prodPric{
+        font-size: 13px;
+    }
+    .prodCartIcon{
+        font-size: 12px;
+    }
+
+    /* Pagination Button */
+    .paginMainDiv{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #pagination{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #pagination>button{
+        padding: 0px 6px;
+        border-radius: 0px;
+        border: 1px solid rgb(193, 193, 193);
+    }
+    #pagination>.prevBtn{
+        font-size: 12px;
+        padding: 0px 10px;
+    }
+    #pagination>.nextBtn{
+        font-size: 12px;
+        padding: 0px 10px;
+    }
+    
+}
